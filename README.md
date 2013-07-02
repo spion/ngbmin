@@ -33,16 +33,14 @@ Named function expressions that end with '$ng' will always be transformed.
 ```js
 var factory = function myModule$ng($scope, $http) {
 };
-
-Output:
-
 angular.module('m').factory('f', factory);
 ```
+
+Output:
 
 ```js
 var factory = [$scope, $http, function myModule$ng($scope, $http) {
 }];
-
 angular.module('m').factory('f', factory);
 ```
 
