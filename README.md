@@ -4,25 +4,30 @@ Angular function injection to array injection transform for browserify.
 
     browserify -t ngbrowserify main.js -o main.bundle.js
 
+Or use it from the command-line instead of ngmin:
+
+    ngbmin < input.js > output.js
+
 Example input: 
 
 ```js
-angular.module('m').factory('f', function($rootScope, $http) {
-    // code    
-});
+angular.module('m').factory('f', 
+    function($rootScope, $http) {
+        // code    
+    });
 ```
 
 Output:
 ```js
-angular.module('m').factory('f', ['$rootScope', '$http', function($rootScope, $http) {
-    // code    
-}]);
+angular.module('m').factory('f', 
+    ['$rootScope', '$http', function($rootScope, $http) {
+        // code    
+    }]);
 ```
 
+## alternate syntax
 
-
-Alternate syntax - named function expressions that end with '$ng' 
-will always be transformed.
+Named function expressions that end with '$ng' will always be transformed.
 
 
 ```js
