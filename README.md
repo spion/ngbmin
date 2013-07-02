@@ -8,7 +8,7 @@ Or use it from the command-line instead of ngmin:
 
     ngbmin < input.js > output.js
 
-Example input: 
+## example input
 
 ```js
 angular.module('m').factory('f', 
@@ -34,6 +34,8 @@ Named function expressions that end with '$ng' will always be transformed.
 var factory = function myModule$ng($scope, $http) {
 };
 
+Output:
+
 angular.module('m').factory('f', factory);
 ```
 
@@ -43,3 +45,8 @@ var factory = [$scope, $http, function myModule$ng($scope, $http) {
 
 angular.module('m').factory('f', factory);
 ```
+
+## license
+
+MIT
+
