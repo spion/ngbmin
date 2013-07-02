@@ -1,7 +1,7 @@
 {
   "name": "ngbrowserify",
   "version": "0.1.3",
-  "description": "Angular function injection to array injection transform for browserify",
+  "description": "Angular function-based injection to array-based injection transform for browserify and the command line.",
   "main": "ngbrowserify.js",
   "directories": {
     "test": "test"
