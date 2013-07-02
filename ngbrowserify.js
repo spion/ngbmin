@@ -44,7 +44,7 @@ var compile = module.exports.compile = function compile(content) {
             node.update(transform(node));
         }
     });
-    return output;
+    return output.toString();
 }
 
 function transform(fn) {
