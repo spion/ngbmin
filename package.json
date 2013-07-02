@@ -27,5 +27,12 @@
     "transform"
   ],
   "author": "spion",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spion/ngbrowserify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spion/ngbrowserify/issues"
+  }
 }
