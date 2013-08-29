@@ -1,34 +1,16 @@
-# ngbrowserify
+# ngbmin
 
-Angular function injection to array injection transform for browserify.
+An angular before-minifying processor that doesn't try to be too smart.
 
-    browserify -t ngbrowserify main.js -o main.bundle.js
+# how it works
 
-Or use it from the command-line instead of ngmin:
+Instead of detecting which functions it should or shouldn't transform,
+it adds a simple rule:
 
-    ngbmin < input.js > output.js
+> All named function expressions that end with '$ng' will be transformed
+> to the array syntax.
 
-## example input
-
-```js
-angular.module('m').factory('f', 
-    function($rootScope, $http) {
-        // code    
-    });
-```
-
-Output:
-```js
-angular.module('m').factory('f', 
-    ['$rootScope', '$http', function($rootScope, $http) {
-        // code    
-    }]);
-```
-
-## alternate syntax
-
-Named function expressions that end with '$ng' will always be transformed.
-
+Example:
 
 ```js
 var factory = function myModule$ng($scope, $http) {
@@ -39,10 +21,20 @@ angular.module('m').factory('f', factory);
 Output:
 
 ```js
-var factory = [$scope, $http, function myModule$ng($scope, $http) {
+var factory = ['$scope', '$http', function myModule$ng($scope, $http) {
 }];
 angular.module('m').factory('f', factory);
 ```
+
+# Usage
+
+From the command-line (recommended):
+
+    ngbmin < input.js > output.js
+
+Or with browserify
+
+    browserify -t ngbmin main.js -o main.bundle.js
 
 ## license
 

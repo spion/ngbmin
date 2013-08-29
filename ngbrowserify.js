@@ -23,23 +23,8 @@ module.exports = function(browserify) {
 var compile = module.exports.compile = function compile(content) {
     var output = falafel(content, function(node) {
         if (match({
-            type: 'CallExpression', 
-            callee: {
-                property: {name: /factory|filter|directive|controller/ }
-            }, 
-            arguments: {
-                0: { type: 'Literal' },
-                1: { type: 'FunctionExpression' }
-            }
-        }, node)) {
-            var fn = node.arguments[1];
-            if (fn.source()[0] != '[')
-                fn.update(transform(fn));
-        } 
-        else if (match({
             type: 'FunctionExpression',
             id: { name: /\$ng$/ }
-
         }, node)) {
             node.update(transform(node));
         }
@@ -57,7 +42,4 @@ function transform(fn) {
     var arrayForm = '[' + arr.join(', ') + ']';
     return arrayForm;
 }
-
-
-
 

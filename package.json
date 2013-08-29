@@ -1,7 +1,7 @@
 {
-  "name": "ngbrowserify",
-  "version": "0.1.7",
-  "description": "Angular function-based injection to array-based injection transform for browserify and the command line.",
+  "name": "ngbmin",
+  "version": "0.1.9",
+  "description": "Pre-minifier that transforms all AngularJS functions that end with $ng from function-injection to array injection syntax",
   "main": "ngbrowserify.js",
   "directories": {
     "test": "test"
