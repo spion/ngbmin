@@ -1,7 +1,7 @@
 {
   "name": "ngbmin",
   "version": "0.2.1",
-  "description": "Pre-minifier that transforms all AngularJS functions that end with $ng from function-injection to array injection syntax",
+  "description": "Simple AngularJS pre-minifier. Transforms all functions that end with $ng from function-injection to array injection syntax",
   "main": "ngbrowserify.js",
   "directories": {
     "test": "test"
