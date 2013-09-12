@@ -27,7 +27,8 @@
     "injection",
     "function",
     "array",
-    "transform"
+    "transform",
+    "ngmin"
   ],
   "author": "spion",
   "license": "MIT",
