@@ -9,7 +9,7 @@ module.exports = function(browserify) {
         return browserify.register('js', compile);
     // browserify v2
     var file = browserify, data = '';
-    if (!/\.js$/.test(file)) 
+    if (!/\.js[x]?$/.test(file)) 
        return through();
     return through(function write(buf) {
         data += buf;
